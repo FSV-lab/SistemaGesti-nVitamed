@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPacienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_idPaciente}" for="idPaciente" />
+                    <h:inputText id="idPaciente" value="#{pacienteController.selected.idPaciente}" title="#{bundle.EditPacienteTitle_idPaciente}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_idPaciente}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_tipoDocumento}" for="tipoDocumento" />
+                    <h:inputText id="tipoDocumento" value="#{pacienteController.selected.tipoDocumento}" title="#{bundle.EditPacienteTitle_tipoDocumento}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_tipoDocumento}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_docPaciente}" for="docPaciente" />
+                    <h:inputText id="docPaciente" value="#{pacienteController.selected.docPaciente}" title="#{bundle.EditPacienteTitle_docPaciente}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_docPaciente}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{pacienteController.selected.nombres}" title="#{bundle.EditPacienteTitle_nombres}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_nombres}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{pacienteController.selected.apellidos}" title="#{bundle.EditPacienteTitle_apellidos}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_apellidos}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_fechaNacimiento}" for="fechaNacimiento" />
+                    <h:inputText id="fechaNacimiento" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.EditPacienteTitle_fechaNacimiento}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_fechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_edad}" for="edad" />
+                    <h:inputText id="edad" value="#{pacienteController.selected.edad}" title="#{bundle.EditPacienteTitle_edad}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_edad}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{pacienteController.selected.direccion}" title="#{bundle.EditPacienteTitle_direccion}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_barrio}" for="barrio" />
+                    <h:inputText id="barrio" value="#{pacienteController.selected.barrio}" title="#{bundle.EditPacienteTitle_barrio}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_barrio}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{pacienteController.selected.telefono}" title="#{bundle.EditPacienteTitle_telefono}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_telefono}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_correoElec}" for="correoElec" />
+                    <h:inputText id="correoElec" value="#{pacienteController.selected.correoElec}" title="#{bundle.EditPacienteTitle_correoElec}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_correoElec}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_estadoCivil}" for="estadoCivil" />
+                    <h:inputText id="estadoCivil" value="#{pacienteController.selected.estadoCivil}" title="#{bundle.EditPacienteTitle_estadoCivil}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_estadoCivil}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_sexo}" for="sexo" />
+                    <h:inputText id="sexo" value="#{pacienteController.selected.sexo}" title="#{bundle.EditPacienteTitle_sexo}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_sexo}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_ocupacion}" for="ocupacion" />
+                    <h:inputText id="ocupacion" value="#{pacienteController.selected.ocupacion}" title="#{bundle.EditPacienteTitle_ocupacion}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_ocupacion}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{pacienteController.update}" value="#{bundle.EditPacienteSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPacienteViewLink}"/>
+                <br />
+                <h:commandLink action="#{pacienteController.prepareList}" value="#{bundle.EditPacienteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPacienteIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

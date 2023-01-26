@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>resources/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+    </application>
+ <navigation-rule>
+        <from-view-id>*</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Adm_copago</from-outcome>
+            <to-view-id>/copago/List.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Adm_Especialistas</from-outcome>
+            <to-view-id>/especialistas/List.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Adm_Historia_Clinica</from-outcome>
+            <to-view-id>/historiaClinica/List.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Adm_Paciente</from-outcome>
+            <to-view-id>/paciente/List.xhtml</to-view-id>
+        </navigation-case>
+             
+    </navigation-rule>
+</faces-config>
+
+
+
+
+

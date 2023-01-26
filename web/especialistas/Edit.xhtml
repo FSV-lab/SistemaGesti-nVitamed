@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEspecialistasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_idEspecialistas}" for="idEspecialistas" />
+                    <h:inputText id="idEspecialistas" value="#{especialistasController.selected.idEspecialistas}" title="#{bundle.EditEspecialistasTitle_idEspecialistas}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_idEspecialistas}"/>
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{especialistasController.selected.nombres}" title="#{bundle.EditEspecialistasTitle_nombres}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_nombres}"/>
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{especialistasController.selected.apellidos}" title="#{bundle.EditEspecialistasTitle_apellidos}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_apellidos}"/>
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_tipoIdentificacion}" for="tipoIdentificacion" />
+                    <h:inputText id="tipoIdentificacion" value="#{especialistasController.selected.tipoIdentificacion}" title="#{bundle.EditEspecialistasTitle_tipoIdentificacion}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_tipoIdentificacion}"/>
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_numeroIdentificacion}" for="numeroIdentificacion" />
+                    <h:inputText id="numeroIdentificacion" value="#{especialistasController.selected.numeroIdentificacion}" title="#{bundle.EditEspecialistasTitle_numeroIdentificacion}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_numeroIdentificacion}"/>
+                    <h:outputLabel value="#{bundle.EditEspecialistasLabel_especialidad}" for="especialidad" />
+                    <h:inputText id="especialidad" value="#{especialistasController.selected.especialidad}" title="#{bundle.EditEspecialistasTitle_especialidad}" required="true" requiredMessage="#{bundle.EditEspecialistasRequiredMessage_especialidad}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{especialistasController.update}" value="#{bundle.EditEspecialistasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEspecialistasViewLink}"/>
+                <br />
+                <h:commandLink action="#{especialistasController.prepareList}" value="#{bundle.EditEspecialistasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEspecialistasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

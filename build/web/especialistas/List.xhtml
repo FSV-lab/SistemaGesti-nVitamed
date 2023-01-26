@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEspecialistasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListEspecialistasEmpty}" rendered="#{especialistasController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{especialistasController.items.rowCount > 0}">
+                    <h:outputText value="#{especialistasController.pagination.pageFirstItem + 1}..#{especialistasController.pagination.pageLastItem + 1}/#{especialistasController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{especialistasController.previous}" value="#{bundle.Previous} #{especialistasController.pagination.pageSize}" rendered="#{especialistasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{especialistasController.next}" value="#{bundle.Next} #{especialistasController.pagination.pageSize}" rendered="#{especialistasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{especialistasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_idEspecialistas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idEspecialistas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_nombres}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombres}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_apellidos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.apellidos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_tipoIdentificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoIdentificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_numeroIdentificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroIdentificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEspecialistasTitle_especialidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.especialidad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{especialistasController.prepareView}" value="#{bundle.ListEspecialistasViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{especialistasController.prepareEdit}" value="#{bundle.ListEspecialistasEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{especialistasController.destroy}" value="#{bundle.ListEspecialistasDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{especialistasController.prepareCreate}" value="#{bundle.ListEspecialistasCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListEspecialistasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

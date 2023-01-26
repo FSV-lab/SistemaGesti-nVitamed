@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPacienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPacienteLabel_idPaciente}"/>
+                    <h:outputText value="#{pacienteController.selected.idPaciente}" title="#{bundle.ViewPacienteTitle_idPaciente}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_tipoDocumento}"/>
+                    <h:outputText value="#{pacienteController.selected.tipoDocumento}" title="#{bundle.ViewPacienteTitle_tipoDocumento}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_docPaciente}"/>
+                    <h:outputText value="#{pacienteController.selected.docPaciente}" title="#{bundle.ViewPacienteTitle_docPaciente}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_nombres}"/>
+                    <h:outputText value="#{pacienteController.selected.nombres}" title="#{bundle.ViewPacienteTitle_nombres}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_apellidos}"/>
+                    <h:outputText value="#{pacienteController.selected.apellidos}" title="#{bundle.ViewPacienteTitle_apellidos}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_fechaNacimiento}"/>
+                    <h:outputText value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.ViewPacienteTitle_fechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_edad}"/>
+                    <h:outputText value="#{pacienteController.selected.edad}" title="#{bundle.ViewPacienteTitle_edad}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_direccion}"/>
+                    <h:outputText value="#{pacienteController.selected.direccion}" title="#{bundle.ViewPacienteTitle_direccion}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_barrio}"/>
+                    <h:outputText value="#{pacienteController.selected.barrio}" title="#{bundle.ViewPacienteTitle_barrio}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_telefono}"/>
+                    <h:outputText value="#{pacienteController.selected.telefono}" title="#{bundle.ViewPacienteTitle_telefono}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_correoElec}"/>
+                    <h:outputText value="#{pacienteController.selected.correoElec}" title="#{bundle.ViewPacienteTitle_correoElec}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_estadoCivil}"/>
+                    <h:outputText value="#{pacienteController.selected.estadoCivil}" title="#{bundle.ViewPacienteTitle_estadoCivil}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_sexo}"/>
+                    <h:outputText value="#{pacienteController.selected.sexo}" title="#{bundle.ViewPacienteTitle_sexo}"/>
+                    <h:outputText value="#{bundle.ViewPacienteLabel_ocupacion}"/>
+                    <h:outputText value="#{pacienteController.selected.ocupacion}" title="#{bundle.ViewPacienteTitle_ocupacion}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{pacienteController.destroyAndView}" value="#{bundle.ViewPacienteDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPacienteEditLink}"/>
+                <br />
+                <h:commandLink action="#{pacienteController.prepareCreate}" value="#{bundle.ViewPacienteCreateLink}" />
+                <br />
+                <h:commandLink action="#{pacienteController.prepareList}" value="#{bundle.ViewPacienteShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPacienteIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

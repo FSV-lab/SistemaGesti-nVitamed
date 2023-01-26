@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateHistoriaClinicaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_idHc}" for="idHc" />
+                    <h:inputText id="idHc" value="#{historiaClinicaController.selected.idHc}" title="#{bundle.CreateHistoriaClinicaTitle_idHc}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_idHc}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_fechaAtencion}" for="fechaAtencion" />
+                    <h:inputText id="fechaAtencion" value="#{historiaClinicaController.selected.fechaAtencion}" title="#{bundle.CreateHistoriaClinicaTitle_fechaAtencion}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_fechaAtencion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_nombreEps}" for="nombreEps" />
+                    <h:inputText id="nombreEps" value="#{historiaClinicaController.selected.nombreEps}" title="#{bundle.CreateHistoriaClinicaTitle_nombreEps}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_nombreEps}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_regimenAfiliado}" for="regimenAfiliado" />
+                    <h:inputText id="regimenAfiliado" value="#{historiaClinicaController.selected.regimenAfiliado}" title="#{bundle.CreateHistoriaClinicaTitle_regimenAfiliado}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_regimenAfiliado}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_NOrdenServicio}" for="NOrdenServicio" />
+                    <h:inputText id="NOrdenServicio" value="#{historiaClinicaController.selected.NOrdenServicio}" title="#{bundle.CreateHistoriaClinicaTitle_NOrdenServicio}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_NOrdenServicio}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_codigoUnidadM}" for="codigoUnidadM" />
+                    <h:inputText id="codigoUnidadM" value="#{historiaClinicaController.selected.codigoUnidadM}" title="#{bundle.CreateHistoriaClinicaTitle_codigoUnidadM}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_codigoUnidadM}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_atencionLugar}" for="atencionLugar" />
+                    <h:inputText id="atencionLugar" value="#{historiaClinicaController.selected.atencionLugar}" title="#{bundle.CreateHistoriaClinicaTitle_atencionLugar}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_atencionLugar}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_evaluacionInicialPaci}" for="evaluacionInicialPaci" />
+                    <h:inputText id="evaluacionInicialPaci" value="#{historiaClinicaController.selected.evaluacionInicialPaci}" title="#{bundle.CreateHistoriaClinicaTitle_evaluacionInicialPaci}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_evaluacionInicialPaci}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_embarazo}" for="embarazo" />
+                    <h:inputText id="embarazo" value="#{historiaClinicaController.selected.embarazo}" title="#{bundle.CreateHistoriaClinicaTitle_embarazo}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_embarazo}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_ginecoobstetrico}" for="ginecoobstetrico" />
+                    <h:inputText id="ginecoobstetrico" value="#{historiaClinicaController.selected.ginecoobstetrico}" title="#{bundle.CreateHistoriaClinicaTitle_ginecoobstetrico}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_ginecoobstetrico}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_dificultadRespiratoria}" for="dificultadRespiratoria" />
+                    <h:inputText id="dificultadRespiratoria" value="#{historiaClinicaController.selected.dificultadRespiratoria}" title="#{bundle.CreateHistoriaClinicaTitle_dificultadRespiratoria}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_dificultadRespiratoria}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_psiquiatrico}" for="psiquiatrico" />
+                    <h:inputText id="psiquiatrico" value="#{historiaClinicaController.selected.psiquiatrico}" title="#{bundle.CreateHistoriaClinicaTitle_psiquiatrico}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_psiquiatrico}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_piel}" for="piel" />
+                    <h:inputText id="piel" value="#{historiaClinicaController.selected.piel}" title="#{bundle.CreateHistoriaClinicaTitle_piel}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_piel}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_escalaCincinnati}" for="escalaCincinnati" />
+                    <h:inputText id="escalaCincinnati" value="#{historiaClinicaController.selected.escalaCincinnati}" title="#{bundle.CreateHistoriaClinicaTitle_escalaCincinnati}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_escalaCincinnati}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_revisionGenePaci}" for="revisionGenePaci" />
+                    <h:inputText id="revisionGenePaci" value="#{historiaClinicaController.selected.revisionGenePaci}" title="#{bundle.CreateHistoriaClinicaTitle_revisionGenePaci}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_revisionGenePaci}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_hallazgosPaci}" for="hallazgosPaci" />
+                    <h:inputText id="hallazgosPaci" value="#{historiaClinicaController.selected.hallazgosPaci}" title="#{bundle.CreateHistoriaClinicaTitle_hallazgosPaci}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_hallazgosPaci}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_impresionDiagnos}" for="impresionDiagnos" />
+                    <h:inputText id="impresionDiagnos" value="#{historiaClinicaController.selected.impresionDiagnos}" title="#{bundle.CreateHistoriaClinicaTitle_impresionDiagnos}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_impresionDiagnos}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_idPaciente}" for="idPaciente" />
+                    <h:selectOneMenu id="idPaciente" value="#{historiaClinicaController.selected.idPaciente}" title="#{bundle.CreateHistoriaClinicaTitle_idPaciente}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_idPaciente}">
+                        <f:selectItems value="#{pacienteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_idEspecialistas}" for="idEspecialistas" />
+                    <h:selectOneMenu id="idEspecialistas" value="#{historiaClinicaController.selected.idEspecialistas}" title="#{bundle.CreateHistoriaClinicaTitle_idEspecialistas}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_idEspecialistas}">
+                        <f:selectItems value="#{especialistasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateHistoriaClinicaLabel_idCopago}" for="idCopago" />
+                    <h:selectOneMenu id="idCopago" value="#{historiaClinicaController.selected.idCopago}" title="#{bundle.CreateHistoriaClinicaTitle_idCopago}" required="true" requiredMessage="#{bundle.CreateHistoriaClinicaRequiredMessage_idCopago}">
+                        <f:selectItems value="#{copagoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{historiaClinicaController.create}" value="#{bundle.CreateHistoriaClinicaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{historiaClinicaController.prepareList}" value="#{bundle.CreateHistoriaClinicaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateHistoriaClinicaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
